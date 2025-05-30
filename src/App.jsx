@@ -1,13 +1,10 @@
-import { useState } from "react";
-import "./App.css";
+import Login from "./pages/login";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div className="bg-green-500">Hello</div>
-    </>
+    <div className="w-screen h-screen">
+      <Login />
+    </div>
   );
 }
 
