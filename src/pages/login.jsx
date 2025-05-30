@@ -36,11 +36,10 @@ const Login = () => {
             />
             <div>
               <FormInput
-                label="Matric No"
+                label="Password"
                 title="password"
                 type="password"
                 placeholder="Password"
-                length={6}
                 inputFieldStyle="border px-2 py-1.5 w-64 rounded-lg mt-1 flex flex-row"
               />
               <p className="mt-1.5">Forgot your password?</p>

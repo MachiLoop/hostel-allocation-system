@@ -1,27 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
-const FormInput = ({
-  label,
-  title,
-  type,
-  placeholder,
-  inputFieldStyle,
-  length,
-}) => {
+const FormInput = ({ label, title, type, placeholder, inputFieldStyle }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
   return (
     <div>
       <p>{label}</p>
       <div className={inputFieldStyle}>
         <input
-          type={type}
+          type={showPassword ? "text" : type}
           name={title}
           id={title}
           placeholder={placeholder}
-          maxLength={length || null}
           className="outline-0 w-full"
         />
         {title == "password" && (
-          <img src="eyeHide.png" alt="" className="w-6 h-6" />
+          <img
+            src={showPassword ? "eye.png" : "eyeHide.png"}
+            alt=""
+            className="w-6 h-6"
+            onClick={() => setShowPassword(!showPassword)}
+          />
         )}
       </div>
     </div>
