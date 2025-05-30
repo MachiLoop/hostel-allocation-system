@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import CustomButton from "../components/customButton";
+import FormInput from "../components/formInput";
 
 const Login = () => {
+  const [formValues, setFormValues] = useState({
+    matricNo: "",
+    password: "",
+  });
+
   return (
     <div className="grid grid-cols-2 w-full h-full">
       <div className="bg-gray-500 flex flex-col items-center justify-center">
@@ -20,34 +27,29 @@ const Login = () => {
             <p>Enter your details to get Started</p>
           </div>
           <div className="flex flex-col gap-3 mt-6">
+            <FormInput
+              label="Matric No"
+              title="matricNo"
+              type="number"
+              placeholder="Matric No"
+              inputFieldStyle="border px-2 py-1.5 w-64 rounded-lg mt-1 flex flex-row"
+            />
             <div>
-              <p>Matric No</p>
-              <input
-                type="number"
-                name="matricNo"
-                id="matricNo"
-                placeholder="Matric no"
-                maxLength={6}
-                className="border px-2 py-1.5 w-64 rounded-lg mt-1"
+              <FormInput
+                label="Matric No"
+                title="password"
+                type="password"
+                placeholder="Password"
+                length={6}
+                inputFieldStyle="border px-2 py-1.5 w-64 rounded-lg mt-1 flex flex-row"
               />
-            </div>
-            <div>
-              <div>
-                <p>Password</p>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Password"
-                  className="border px-2 py-1.5 w-64 rounded-lg mt-1"
-                />
-              </div>
               <p className="mt-1.5">Forgot your password?</p>
             </div>
           </div>
-          <button className="bg-gray-400 py-2 px-2 mt-6  rounded-lg w-full">
+
+          <CustomButton style="bg-gray-300 py-2 px-2 mt-6 rounded-lg w-full">
             Log In
-          </button>
+          </CustomButton>
         </div>
       </div>
     </div>
